@@ -1,0 +1,28 @@
+//Emiliano Galaviz Gomez
+#include <stdio.h>
+
+int main(void) {
+
+  //Definir variables
+  int a = 10;
+  int b = 20;
+  int resultado = 0;
+  
+  //Definir punteros
+  int *puntero_a = &a;
+  int *puntero_b = &b;
+
+  //Sumar los valores a través de los punteros y almacenarlos en resultado
+  resultado = *puntero_a + *puntero_b;
+  printf("Valor a: %d\n", a);
+  printf("Valor b: %d\n", b);
+  printf("Resultado: %d", resultado);
+
+  *puntero_a = 30;
+  printf("\n\nValor a: %d\n", a);
+  //Valor nuevo
+  
+  printf("Valores nuevos\nValor a: %d\n", a);
+  printf("Valor b: %d\n", b);
+  return 0;
+}
