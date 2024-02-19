@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MATF 3
+#define MATC 3
+
+typedef struct{
+
+ int matriz[MATF][MATC];
+ int matriz1[MATF][MATC];
+ int matres[MATF][MATC];
+}arreglo;
+
+int main(void) {
+
+  arreglo arreglos;
+
+  arreglo *ptrmat1;
+  arreglo *ptrmat2;
+  arreglo *ptrmatres;
+    
+
+  printf("Matriz 1\n");
+  for(int i=0;i<MATF;i++)
+  {
+    for(int j=0; j<MATC; j++)
+    {
+      printf("Elemento [%d][%d]: ",i+1, j+1);
+      scanf("%d", &arreglos.matriz[i][j]);
+      system("clear");
+    }
+  }
+  
+  printf("Matriz 2\n");
+  for(int i=0;i<MATF;i++)
+  {
+    for(int j=0; j<MATC; j++)
+    {
+      printf("Elemento [%d][%d]: ",i+1, j+1);
+      scanf("%d", &arreglos.matriz1[i][j]);
+      system("clear");
+    }
+  }
+
+  //Sumar
+
+  printf("Matriz 2\n");
+
+  for (ptrmat1=&arreglos; ptrmat1 < arreglos+ MATF; ptrmat1++){
+
+    for(ptrmat2=&arreglos; ptrmat2 < arreglos + MATC; ptrmat2++){
+
+      ptrmatres = &arreglos;
+      ptrmatres-> matres[prtmat1][ptrmat2] = ptrmat1 -> matriz[ptrmat1][ptrmat2] + ptrmatriz1-> matriz1[ptrmat1][ptrmat2];
+   
+    
+    }
+  }
+  
+
+
+  //Imprimir la matriz
+printf("MATRIZ:\n\n");
+  for(int i=0;i<MATF;i++)
+  {
+    for(int j=0; j<MATC; j++)
+    {
+      printf("[%d]",matres[i][j]);
+ 
+    }
+    printf("\n");
+  }
+  
+  return 0;
+}
