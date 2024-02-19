@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Emiliano Galaviz
+int main() {
+  float calificaciones[18];
+  float promedio = 0;
+  float decimales [] = {1 , 0 , -2 , 3 , 4 , 5, -1 , 0, 2, 1, 0, 1};
+ float *ptr = calificaciones;
+  float *ptr2 = decimales;
+  //El puntero apunta al primer elemento del arreglo
+
+
+
+  for (int i = 1; i < 18; i++){
+printf("Ingresa las calificaiones del alumno %d: ", i);
+    scanf("%f", &calificaciones[i]);
+    system("clear");
+
+  }
+  for (int i = 1; i < 18; i++) {
+*(ptr2 + i) = *(ptr2 + i)/10;
+*(ptr + i)=*(ptr+i)+*(ptr2+i);
+    printf("La calificacion %d es: %.1f\n", i, *(ptr + i));
+
+  }
+
+
+  return 0;
+}
