@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_ARREGLO 2
+typedef struct{
+
+char tipo[20]; 
+int puertos; 
+char direccionIP[15];
+
+}dispositivo;
+
+int main(void) {
+
+  dispositivo dispositivos[MAX_ARREGLO];
+
+  dispositivo *ptrDisp;
+
+  printf("Ingresar datos de los estudiantes:\n");
+
+  for (int i = 0; i < MAX_ARREGLO; i++){
+
+    printf("Dispositivo %d\nTipo:\n", i+1);
+    scanf("%s", dispositivos[i].tipo);
+
+    printf("\nPuertos:\n");
+    scanf("%d", &dispositivos[i].puertos);
+
+    printf("\nDirección IP:\n");
+    scanf("%s", dispositivos[i].direccionIP);
+
+
+  }
+system("clear");
+
+
+  for (ptrDisp=dispositivos; ptrDisp < dispositivos+ MAX_ARREGLO; ptrDisp++){
+
+  
+      printf("Dispositivo %ld\nRed: %s\nTipo: %d\nDireccion IP: %s\n\n", ptrDisp - dispositivos+1, ptrDisp->tipo, ptrDisp->puertos, ptrDisp->direccionIP);
+
+      printf("--------------------------\n");
+
+    }
+  
+  return 0;
+}
