@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+//Funcion para duplicar cada elemento del arreglo
+void duplicarElementos(int *arreglo, int n){
+  for(int i=0; i<n; i++){
+    arreglo[i] = arreglo[i]*2;
+    
+  }
+}
+
+void imprimirArreglo(int *arreglo, int n){
+  for(int i=0; i<n; i++){
+    printf("%d ", arreglo[i]);
+  }
+}
+
+int main(void) {
+
+  const int tamano = 5;
+  int miArreglo[tamano] = {1,2,3,4,5};
+  
+  //Llamar a la función para duplicar elementos
+
+  duplicarElementos(miArreglo, tamano);
+
+  //Imprimir los elementos del arreglo
+
+  imprimirArreglo(miArreglo, tamano);
+  
+  return 0;
+}
