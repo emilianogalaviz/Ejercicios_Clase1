@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Laboratorio {
+  int id;
+  char  nombre[30];
+  int no_equipos;
+  char caracteristica_tecnica[100];
+};
+int main(void) {
+  struct Laboratorio Laboratorios[10];
+  int lab = 0;
+  printf("¿Cuantos laboratorios desea ingresar?(Maximo 10) ");
+  scanf("%d", &lab);
+  system("clear");
+  for (int i = 0; i < lab; i++) {
+    printf("Ingrese el ID del laboratorio %d: ", i + 1);
+    scanf(" %d", &Laboratorios[i].id);
+    printf("Ingrese el nombre del laboratorio %d: ", i + 1);
+    scanf(" %s", Laboratorios[i].nombre);
+    printf("Ingrese el número de equipos del laboratorio %d: ", i + 1);
+    scanf(" %d", &Laboratorios[i].no_equipos);
+    printf("Ingrese la característica técnica del laboratorio %d: ", i + 1);
+    scanf(" %s", Laboratorios[i].caracteristica_tecnica);
+    system("clear");
+  }
+  double numbers[1];
+  numbers [0]=5;
+  for (int i = 0; i < lab; i++) {
+   printf("El ID del laboratorio %d es: %d\nEl nombre del laboratorio %d es: %s\nEl número de equipos en el laboratorio %d es: %d\nLa característica técnica del laboratorio %d es: %s\n\n\n", i +1, Laboratorios[i].id, i +1, Laboratorios[i].nombre, i + 1, Laboratorios[i].no_equipos, i + 1, Laboratorios[i].caracteristica_tecnica);
+  }
+  return 0;
+}
