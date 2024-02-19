@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+typedef struct{
+
+int x;
+int y;
+double c;
+
+}coordenada;
+
+int main(void) {
+  
+
+  int numero = 42;
+  int *puntero = &numero;
+
+  printf("puntero : %d\n", *puntero);
+  scanf("%d", &*puntero);
+   printf("puntero : %d", *puntero);
+  
+  return 0;
+}
