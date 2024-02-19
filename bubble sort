@@ -1,0 +1,71 @@
+//Emiliano Galaviz
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//Funcion para llenar el arreglo que guarda los numeros
+void llenarArreglo(int arreglo[], int tamano){
+  system("clear");
+ for(int i = 0; i < tamano;i++){
+   printf("Ingrese el número del lugar %d \n", i+1);
+   scanf("%d", &arreglo[i]);
+   system("clear");
+ }
+}
+//Funcion para imprimir el arreglo que guarda los numeros
+void imprimirArreglo(int arreglo[],int tamano){
+    
+   for(int i = 0; i < tamano;i++){
+     
+     printf("Lugar %d es: %d \n", i+1, arreglo[i]);
+       
+   }
+}
+//Funcion para llenar el arreglo de números random
+void aleatorios(int arreglo[], int tamano){
+  srand(time(NULL));
+  for(int i = 0; i<tamano; i++){
+    arreglo[i]=rand() % 100;
+  }
+}
+//Funcion para ordenar el arreglo de menor a mayor
+void ordenarBurbuja(int arreglo[],int tamano, int temp){
+  
+ for(int i = 0;i<tamano;i++){
+
+  for(int j = 0;j<tamano-1;j++){
+
+    if(arreglo[j] > arreglo[j+1]){
+      temp = arreglo[j+1];
+      arreglo[j+1] = arreglo[j];
+      arreglo[j] = temp;
+      }
+    }
+  }
+  
+
+}
+
+int main(int argc, char *argv[]){
+  //Se pide el tamaño del arreglo
+ int tamano, temp;
+ printf("Ingrese el tamaño del arreglo: ");
+ scanf("%d", &tamano);
+  
+ int arreglo[tamano];
+
+ //llenarArreglo(arreglo, tamano);
+  aleatorios(arreglo,tamano);
+    
+ //imprimirArreglo(arreglo, tamano);
+  clock_t start = clock();
+ ordenarBurbuja(arreglo,tamano,temp);
+  
+  //printf("\n\nArreglo ordenado: \n\n");
+
+  //imprimirArreglo(arreglo, tamano);
+  //Se pone el tiempo de ejecucion de la funcion ordenarBurbuja.
+  printf("Tiempo transcurrido en segundos: %.9f", ((double)clock() - start) / CLOCKS_PER_SEC);
+  return 0;
+}
