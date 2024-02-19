@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void) {
+
+  //Definir variables enteras
+  int a = 10;
+  int b = 20;
+
+  //Definir punteros a entero y asignarles las direcciones de las variables
+
+  int *puntero_a = &a;
+  int *puntero_b = &b;
+
+ 
+
+  printf("\nVariable a, Valor: %d, Direccion: %p\n" , *puntero_a, &puntero_a);
+  printf("Variable b, Valor: %d, Direccion: %p", *puntero_b,&puntero_b);
+
+  
+  return 0;
+}
