@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct{
+
+char nombre[50];
+int cantidad;
+float precio;
+
+}elemento;
+
+
+int main(void) {
+elemento reactivo = {"Reactivo A", 20, 12.5};
+elemento *ptrReactivo = &reactivo;
+
+  printf("Nombre: %s\n",ptrReactivo->nombre);
+  printf("Cantidad: %d\n",ptrReactivo->cantidad);
+  printf("Precio: %.2f\n",ptrReactivo->precio);
+
+  printf("\n\nNueva cantidad: %d\n",ptrReactivo->cantidad+5);
+
+  return 0;
+}
